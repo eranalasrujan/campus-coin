@@ -1,19 +1,21 @@
-async function main() {
-  const [deployer] = await ethers.getSigners();
-  console.log("Deploying from:", deployer.address);
+const hre = require("hardhat");
 
-  const CampusCoin = await ethers.getContractFactory("CampusCoin");
+async function main() {
+  const [deployer] = await hre.ethers.getSigners();
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  // Deploy the contract
+  const CampusCoin = await hre.ethers.getContractFactory("CampusCoin");
   const token = await CampusCoin.deploy();
 
   await token.deployed();
-  console.log("CampusCoin deployed to:", token.address);
 
-  const REWARD_MANAGER = await token.REWARD_MANAGER();
-  await token.grantRole(REWARD_MANAGER, deployer.address);
-  console.log("Granted REWARD_MANAGER to:", deployer.address);
+  console.log("----------------------------------------------------");
+  console.log("SUCCESS! CampusCoin deployed to:", token.address);
+  console.log("----------------------------------------------------");
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
 });
