@@ -1,0 +1,4 @@
+.exit
+ethers.utils.formatUnits(bal, 18);
+const bal = await c.balanceOf("0x70997970C51812dc3A010C7d01b50e0d17dc79C8");
+const c = await ethers.getContractAt("CampusCoin","0x5FbDB2315678afecb367f032d93F642f64180aa3");
