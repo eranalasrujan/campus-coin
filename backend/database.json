@@ -4,30 +4,810 @@
       "username": "admin",
       "password": "123",
       "role": "admin",
-      "name": "Super Admin",
-      "walletAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+      "name": "System Admin",
+      "walletAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "privateKey": "HIDDEN_HARDHAT_KEY"
     },
     {
-      "username": "faculty",
-      "password": "123",
+      "username": "Dr. D. VIJAYA LAKSHMI",
+      "password": "Dr. D. VIJAYA LAKSHMI",
       "role": "faculty",
-      "name": "Dr. Smith",
-      "walletAddress": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+      "name": "Dr. D. VIJAYA LAKSHMI",
+      "walletAddress": "0x984cB8F453236BB0F727CE553D5bC07E8dAfc325",
+      "privateKey": "0x3ca9142b88fab79f748bae1019dfec8acf571ba371f2e4930587c7916325498b"
     },
     {
-      "username": "student",
-      "password": "123",
-      "role": "student",
-      "name": "Rahul Kumar",
-      "walletAddress": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+      "username": "Dr. M. RUDRA KUMAR",
+      "password": "Dr. M. RUDRA KUMAR",
+      "role": "faculty",
+      "name": "Dr. M. RUDRA KUMAR",
+      "walletAddress": "0x6F705aaE43c0d7ee6fB68cD5C79024CDF68daa31",
+      "privateKey": "0x55b23f081cf4f2df9545ca5f7c3a893e34998cdfba2837d462e163159afcdede"
     },
     {
-      "username": "canteen",
+      "username": "Dr. CH. PREM KUMAR",
+      "password": "Dr. CH. PREM KUMAR",
+      "role": "faculty",
+      "name": "Dr. CH. PREM KUMAR",
+      "walletAddress": "0x6D53dEfBAb51684677817b01DF1A3CcdFC6a5F77",
+      "privateKey": "0xb21894522c6c2585c6fcc713739da91d5544c643be1a641016ffe6794fe7a9b2"
+    },
+    {
+      "username": "Mrs. A. V. L. PRASUNA",
+      "password": "Mrs. A. V. L. PRASUNA",
+      "role": "faculty",
+      "name": "Mrs. A. V. L. PRASUNA",
+      "walletAddress": "0x62298239376A0bA70Cb634920Ba95B5c8606914b",
+      "privateKey": "0xf869fb624d2ec51ded2aa0671d1e9df2ed466d02522e811cc116e54cb0f0fa5e"
+    },
+    {
+      "username": "Dr. U. CHAITANYA",
+      "password": "Dr. U. CHAITANYA",
+      "role": "faculty",
+      "name": "Dr. U. CHAITANYA",
+      "walletAddress": "0x1683ED8F45804CC32f66Ce568a6880e76D4bAE42",
+      "privateKey": "0x7bff49f87bd11c2c8a804dd2613770e36240f02a960b16a4da370bc3b8fd4f3f"
+    },
+    {
+      "username": "Dr. N. SREE DIVYA",
+      "password": "Dr. N. SREE DIVYA",
+      "role": "faculty",
+      "name": "Dr. N. SREE DIVYA",
+      "walletAddress": "0x143735f536703140556Dd2C410d8D54F0dfA68d7",
+      "privateKey": "0x19aeff743f9f5f21cfb07afc97a7ad0bcb29b84d08f46b4753afdb309303fb6e"
+    },
+    {
+      "username": "Mrs. J. HIMA BINDU",
+      "password": "Mrs. J. HIMA BINDU",
+      "role": "faculty",
+      "name": "Mrs. J. HIMA BINDU",
+      "walletAddress": "0x4F5FCD42B74cF0487FAe66d3428622C9Acbd87dF",
+      "privateKey": "0x06de4de2a7e38d19e6ca6d3d529c51a89ef08fdc255d0b077396d6d712deabf8"
+    },
+    {
+      "username": "Mrs. B. MEENAKSHI",
+      "password": "Mrs. B. MEENAKSHI",
+      "role": "faculty",
+      "name": "Mrs. B. MEENAKSHI",
+      "walletAddress": "0xc3a6d7EEB83EC09e45627E417cad68DFF75e8830",
+      "privateKey": "0x1af597908d788a3b75dc87b5894f47df54e7e5cc221875cd0f38890529d1089f"
+    },
+    {
+      "username": "Mrs. CH. LAKSHMI KUMAR",
+      "password": "Mrs. CH. LAKSHMI KUMAR",
+      "role": "faculty",
+      "name": "Mrs. CH. LAKSHMI KUMAR",
+      "walletAddress": "0x97b4C3De97c4353b5219F1af7A0cB10EE0A95c6B",
+      "privateKey": "0xdedf51fed1cbaa96545ce5e7b7ec1c51c831beb2646455f3a2b901758df6c766"
+    },
+    {
+      "username": "Mrs. B. SWETHA",
+      "password": "Mrs. B. SWETHA",
+      "role": "faculty",
+      "name": "Mrs. B. SWETHA",
+      "walletAddress": "0xb5D743BbC095fD2380c341F6D33F2d4a840ba2Ba",
+      "privateKey": "0xa144279808582a4d2ecd8a58c1a36c807e8aba2df5300aace68e053ab418fd48"
+    },
+    {
+      "username": "Mrs. CH. SUDHA",
+      "password": "Mrs. CH. SUDHA",
+      "role": "faculty",
+      "name": "Mrs. CH. SUDHA",
+      "walletAddress": "0x91Ea15F7B2BEf4351D6D38a7706Fb1781F449465",
+      "privateKey": "0xcddd9c0321c11df681384d3502ee46ea6c6ab32fa228fb05739e30a9d85bf225"
+    },
+    {
+      "username": "Mr. B. LOKESH",
+      "password": "Mr. B. LOKESH",
+      "role": "faculty",
+      "name": "Mr. B. LOKESH",
+      "walletAddress": "0x76fA15695eb70264CC92794220f957F55b434b17",
+      "privateKey": "0xf62290eef289f5b56be7f9b5e114e9d9c354046b91c085801590ead35beb4f53"
+    },
+    {
+      "username": "Mrs. V. VEENA",
+      "password": "Mrs. V. VEENA",
+      "role": "faculty",
+      "name": "Mrs. V. VEENA",
+      "walletAddress": "0xF08920D2C91D181cD5fF5B085Ec712aC97A423Bf",
+      "privateKey": "0xe374d8d3eec804ce9afe92eabb52077f99a7cdc3b5fa014fcb33253aa6e8edd2"
+    },
+    {
+      "username": "Mrs. A. AMULYA",
+      "password": "Mrs. A. AMULYA",
+      "role": "faculty",
+      "name": "Mrs. A. AMULYA",
+      "walletAddress": "0xf9215867A54a3Ec14c6CDac4d38EB57ce73fB281",
+      "privateKey": "0x79b83789195c1a8a55b52d0fa8387007b774cb6e718a94479ac6855d613e54de"
+    },
+    {
+      "username": "Ms. M. VARA LAKSHMI",
+      "password": "Ms. M. VARA LAKSHMI",
+      "role": "faculty",
+      "name": "Ms. M. VARA LAKSHMI",
+      "walletAddress": "0x8D49a2C0C5ffEAf09016dEb5aE6a355d87483840",
+      "privateKey": "0x51086d162dcdf9f5174155b94fdaffc28bbcd78fe26d1a92c4c62e890d268ad3"
+    },
+    {
+      "username": "Mrs. R. VIJAYA LAKSHMI",
+      "password": "Mrs. R. VIJAYA LAKSHMI",
+      "role": "faculty",
+      "name": "Mrs. R. VIJAYA LAKSHMI",
+      "walletAddress": "0x580048eA1ED3a369a2634A1D8895B4908db47013",
+      "privateKey": "0xd0e2f67e2e94ec5c64a11a9594beedbeb3b7b6d42b98934397abbd8c41d90169"
+    },
+    {
+      "username": "Mr. B. TULASI DASU",
+      "password": "Mr. B. TULASI DASU",
+      "role": "faculty",
+      "name": "Mr. B. TULASI DASU",
+      "walletAddress": "0xD55C4FA84E863338726C371497c9Cc2AF5c8A11D",
+      "privateKey": "0x9d41cd3645d372827ffab31ce53d81d7ec7faf8c9e476b96def0145c29fdae01"
+    },
+    {
+      "username": "Mrs. SK ASHRIYA JULMA",
+      "password": "Mrs. SK ASHRIYA JULMA",
+      "role": "faculty",
+      "name": "Mrs. SK ASHRIYA JULMA",
+      "walletAddress": "0x68533466E7277f9BCf9e7302b6C7cbf0F7666D7E",
+      "privateKey": "0xe0c3d0f9c468f2da9285b90b9901faa51b8364f18b461442291a21c506fa8ae4"
+    },
+    {
+      "username": "Dr. SUBA SUSEELA",
+      "password": "Dr. SUBA SUSEELA",
+      "role": "faculty",
+      "name": "Dr. SUBA SUSEELA",
+      "walletAddress": "0xE997C6741A72551ADE0e4d176bBA274dE2cb990F",
+      "privateKey": "0x54d4a899dfebde8372574ee81c835151e3cd30daf098260c60966ed343a2fa9a"
+    },
+    {
+      "username": "Mrs. J. PADMAVATHI",
+      "password": "Mrs. J. PADMAVATHI",
+      "role": "faculty",
+      "name": "Mrs. J. PADMAVATHI",
+      "walletAddress": "0x4F3AB26Bb6E5a2bC8d77B1e88E3F5249dd3Adb5F",
+      "privateKey": "0x3b122c452017c9073657441322174de5535bbec2ecf81aa85553815a397c69f3"
+    },
+    {
+      "username": "campuscanteen",
       "password": "123",
       "role": "vendor",
-      "name": "Main Canteen",
-      "walletAddress": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+      "name": "Campus Canteen",
+      "walletAddress": "0x313ABa63D7Dd1a12C70Bb725CF0e12F8c28DE92f",
+      "privateKey": "0xc013add56cd49b826666a7272aa67dc0f9e613e9cf502460c713308656199be9"
+    },
+    {
+      "username": "libraryxerox",
+      "password": "123",
+      "role": "vendor",
+      "name": "Library Xerox",
+      "walletAddress": "0xE08F99Ae07cd162FfE26f1Eb1B4d58ba42ce6AD5",
+      "privateKey": "0xa03212c82d91559b2deb7cbe7de8e20035444cac4264d5f7aa0ed4e091cd84fd"
+    },
+    {
+      "username": "stationeryshop",
+      "password": "123",
+      "role": "vendor",
+      "name": "Stationery Shop",
+      "walletAddress": "0x8be304d1cE518E9da5afAA725272A9eA7d844aA2",
+      "privateKey": "0xbbeb5f3b2f47c1dc4b529da0b4f4206eae364300a1b784ba82e7088759bad91a"
+    },
+    {
+      "username": "juicepoint",
+      "password": "123",
+      "role": "vendor",
+      "name": "Juice Point",
+      "walletAddress": "0x8361250FF9ca2ef67B752F961A1538453534cDA5",
+      "privateKey": "0xdec8eca2a7f4cbc4b123ec592998ee862919043c4402a899843bbe7ae675054d"
+    },
+    {
+      "username": "coffeeshop",
+      "password": "123",
+      "role": "vendor",
+      "name": "Coffee Shop",
+      "walletAddress": "0xC7b27858460bd027703c43da145a8A657863E92d",
+      "privateKey": "0x5f7162f32766c8f059848fba81ed66501f0d91c09de383e595f2b18fa1313fad"
+    },
+    {
+      "username": "collegemart",
+      "password": "123",
+      "role": "vendor",
+      "name": "College Mart",
+      "walletAddress": "0x73CEE10F4e96CCf006885de97aD58084f2CD6220",
+      "privateKey": "0xcf067ffdcdeeb8cd14e65e82f770400f7f6759a8802ad7f1e698abe1edc1dcd5"
+    },
+    {
+      "username": "KARTHIKEYA REDDY VELAGALA",
+      "password": "22261A1233",
+      "role": "student",
+      "name": "KARTHIKEYA REDDY VELAGALA",
+      "walletAddress": "0x1198418aF9832611d53AC5360bfE067500694d01",
+      "privateKey": "0xaa2394ccc49ab083d4697c026b0987dcd97bf0d06f03e73a903a66a1dc7c8f5d"
+    },
+    {
+      "username": "KARANGULA YESHWANTH REDDY",
+      "password": "22261A1232",
+      "role": "student",
+      "name": "KARANGULA YESHWANTH REDDY",
+      "walletAddress": "0x618f8962890dfddB077Db549e4D0B5f53969c814",
+      "privateKey": "0x80b13ab0f1a536e94a6780f4d26cf780382ba41dca6e3af6f1d76fc378ec4d12"
+    },
+    {
+      "username": "VEDANT MALPANI",
+      "password": "22261A1262",
+      "role": "student",
+      "name": "VEDANT MALPANI",
+      "walletAddress": "0x71946162E354f1CCa91Af3B5f9d9964D02653d8b",
+      "privateKey": "0x9ad258682c7871d46075a2a53fbe11d41d2a798bbd835abf0ce148c99bb52aef"
+    },
+    {
+      "username": "PATLANNAGARI PRITEESH REDDY",
+      "password": "22261A1245",
+      "role": "student",
+      "name": "PATLANNAGARI PRITEESH REDDY",
+      "walletAddress": "0xA4b065b7b5E9470ec9786f25015Edfb6A1F07B8A",
+      "privateKey": "0x749a24d884d702aa15e77fc6e70fb2d4dfc4a684706d2b854de09839fa6b155e"
+    },
+    {
+      "username": "MAHAREDDY MEGHA REDDY",
+      "password": "2221A1238",
+      "role": "student",
+      "name": "MAHAREDDY MEGHA REDDY",
+      "walletAddress": "0x36891bb50247FA0Ff28020dA5506637114D79f42",
+      "privateKey": "0x4a4dcbdb3226aaaddc081b59d1ba053d33745847145f4f768ff11598661491c9"
+    },
+    {
+      "username": "ROHAN SIDDHARTH SAVALAM",
+      "password": "22261A1250",
+      "role": "student",
+      "name": "ROHAN SIDDHARTH SAVALAM",
+      "walletAddress": "0x819Fcb0cbF078DfC294cC45D3a6AFFCCEE517a24",
+      "privateKey": "0x1a51a13276c260d83252444e76fc0185391949f59705c8a0dfc225249bb4f74d"
+    },
+    {
+      "username": "PINNINTI SOUMYA",
+      "password": "23265A1206",
+      "role": "student",
+      "name": "PINNINTI SOUMYA",
+      "walletAddress": "0xcED5967fCf43AA01FCD2feEC35Bcb77F5D9f5d77",
+      "privateKey": "0x57345a3cb081bce18c698a893ee548b7998898cae22f9a5094cb8eb194f3bba8"
+    },
+    {
+      "username": "MAROJU KRISHNA SAHEE",
+      "password": "23265A1205",
+      "role": "student",
+      "name": "MAROJU KRISHNA SAHEE",
+      "walletAddress": "0xACD20f6eCCf83e1e1Ccf85259C359E6298911f1A",
+      "privateKey": "0x3cee772974a6c5f2dc1fb1fc3d414f6d15f9f911ee6652a5bc1f90b5a69d8552"
+    },
+    {
+      "username": "KRITHI CHIPPADA",
+      "password": "22261A1236",
+      "role": "student",
+      "name": "KRITHI CHIPPADA",
+      "walletAddress": "0x232cb540f2fED97787d9ec1573de7F0E48ACaC88",
+      "privateKey": "0x17f7b456d5e933507cb347c8bf79cee42567b0fc8948bbfaf2851350f1df8f6b"
+    },
+    {
+      "username": "DABBARA SATVIK",
+      "password": "22261A1217",
+      "role": "student",
+      "name": "DABBARA SATVIK",
+      "walletAddress": "0xb079904fF39Bc10E7B7A80A6000199949E6A4BC7",
+      "privateKey": "0x97aceb832db8d35035ab25703cd24f7cf35abc6fc3e5fd9c528a6d184d7ca16b"
+    },
+    {
+      "username": "THALLA AKSHAYA",
+      "password": "22261A1258",
+      "role": "student",
+      "name": "THALLA AKSHAYA",
+      "walletAddress": "0x923670E7Fdfb0d5935Bf136A8b8D8122391Ed016",
+      "privateKey": "0x0e13235e51991747a0511b1f1d1aa8d61a731c25a18122be262c5fdcb6948f93"
+    },
+    {
+      "username": "AEDDU PAVAN",
+      "password": "23265A1201",
+      "role": "student",
+      "name": "AEDDU PAVAN",
+      "walletAddress": "0x7FE559d4d641Ae10bbA64047CE036dC5526B86EC",
+      "privateKey": "0xb22ba772528e30870991a0dec250e57c1a99e12c50febf2f9a15b19c8614991e"
+    },
+    {
+      "username": "GUMMALLA PAVANA LAKSHMI NARASIMHA",
+      "password": "22261A1222",
+      "role": "student",
+      "name": "GUMMALLA PAVANA LAKSHMI NARASIMHA",
+      "walletAddress": "0x40bc94A2A58Ab8FE7B3a079f7bDc013E813b89c0",
+      "privateKey": "0x71b8ede821b76307b3920d741c4a03c9da60ffde0ae0dcac1a29e2826ec094ac"
+    },
+    {
+      "username": "C YETNESH REDDY",
+      "password": "22261A1213",
+      "role": "student",
+      "name": "C YETNESH REDDY",
+      "walletAddress": "0xb2912B774C42CCC0800ca61F0dC7b7bB932930f5",
+      "privateKey": "0x1a6d7cb87abe26b4e5dffcceb545b8b241afde4d73933337711e6b893ccb2712"
+    },
+    {
+      "username": "BATTULA SATYANARAYANA REDDY",
+      "password": "22261A1209",
+      "role": "student",
+      "name": "BATTULA SATYANARAYANA REDDY",
+      "walletAddress": "0x4f07548F25ED7C5812466edd9aFDc68C8913CEb3",
+      "privateKey": "0x411ec4a9e1827f48594a663baed229211b952668452ecc211dd87f7c13821ecd"
+    },
+    {
+      "username": "THOTA ADVITH",
+      "password": "22261A1260",
+      "role": "student",
+      "name": "THOTA ADVITH",
+      "walletAddress": "0x69254cb631553245B286Fd8E3597E812deCC28db",
+      "privateKey": "0x370edcd2b82b7bd91227d7c13f669da6735d5d94a9a8095f7acf52c14ebd655e"
+    },
+    {
+      "username": "TANNERU JOSHNAVI",
+      "password": "22261A1255",
+      "role": "student",
+      "name": "TANNERU JOSHNAVI",
+      "walletAddress": "0xEe500EB3A1088A0bDD76980B2b7633aeCe0bE831",
+      "privateKey": "0xf8ddac76cf968350a9061e04c207dcf656b4e7be306d03eb2adca9555129dae6"
+    },
+    {
+      "username": "POTHEPAKA PRASANNA",
+      "password": "22261A1248",
+      "role": "student",
+      "name": "POTHEPAKA PRASANNA",
+      "walletAddress": "0xE4F4ad1231799E892CB7bE96589698C0BB616Ff8",
+      "privateKey": "0x60abfd18032ba7886fcc12fd5fab8aabd30d7baa41cabf56baf2ea0d459a8de3"
+    },
+    {
+      "username": "THARUNI GANAPATHI",
+      "password": "22261A1259",
+      "role": "student",
+      "name": "THARUNI GANAPATHI",
+      "walletAddress": "0x610AD2B3CaD353DF6Da036544dbF0641622cC987",
+      "privateKey": "0x8808c0586c605b781488aeca06200e0ee950497403233d8aae5b219d5b818b0e"
+    },
+    {
+      "username": "BANOTHU NIRANJAN KUMAR",
+      "password": "22261A1208",
+      "role": "student",
+      "name": "BANOTHU NIRANJAN KUMAR",
+      "walletAddress": "0xdD576AfedC13aFAbCd2d6DBC5F2cd1EAdcc0d767",
+      "privateKey": "0xbc97d93eb3c7a6c42ca30975c2ae8e4d1672a05b800528c79d9fca7d149d3b48"
+    },
+    {
+      "username": "SURAGANI REVATHI",
+      "password": "22261A1253",
+      "role": "student",
+      "name": "SURAGANI REVATHI",
+      "walletAddress": "0xD7EF84Fcd91c3863f195fB2a031D5A57ba92CB8F",
+      "privateKey": "0xd842bc097d996e5ee6aef8571ad44e34c0e3d2c9677671610f4c5b205e88e7a8"
+    },
+    {
+      "username": "PATLOORI DURGA",
+      "password": "22261A1246",
+      "role": "student",
+      "name": "PATLOORI DURGA",
+      "walletAddress": "0x80c9fD7F67661c92E9A76Eb132148dd6158f22b1",
+      "privateKey": "0xee8a431b86f818c1c8e5628672a170d9e1cc70c7be2e1151ee1ffcc19fc2e654"
+    },
+    {
+      "username": "DASHRITH REDDY",
+      "password": "22261A1216",
+      "role": "student",
+      "name": "DASHRITH REDDY",
+      "walletAddress": "0x51a33927897bf8526AE76F60b13F77d25cDABde9",
+      "privateKey": "0xfb2f9dfc169e1bfe345c58477da3b70c852b1791cef3a012d787d5ad6a47385d"
+    },
+    {
+      "username": "ARURI NIKHIL",
+      "password": "22261A1205",
+      "role": "student",
+      "name": "ARURI NIKHIL",
+      "walletAddress": "0xa7c54738D7AA9a77593e5C60Bf9F0Bd4602A338F",
+      "privateKey": "0x495e816e9def9b3a16dbee370c39ad2660a52ba40d360ad5f2b57edf1711bc93"
+    },
+    {
+      "username": "BUSATHI ANURAGH",
+      "password": "22261A1212",
+      "role": "student",
+      "name": "BUSATHI ANURAGH",
+      "walletAddress": "0x269461304EC7DAB6EF3E9349D9cE9f765637195f",
+      "privateKey": "0x6f1cda0c9bce16835e255fd20dd138c17688a66ce5d9d1bb9e2a58e98ba3ad5e"
+    },
+    {
+      "username": "M DEEPAK",
+      "password": "22261A1237",
+      "role": "student",
+      "name": "M DEEPAK",
+      "walletAddress": "0xdC81Ef6523dfD3fb2Fe8D6BB9DCA3bAD301a7bEE",
+      "privateKey": "0x319d88b33b7168081db06db302a00b87d1891c6408a503860906119372b8522a"
+    },
+    {
+      "username": "DARGA PRAWALIKA",
+      "password": "22261A1218",
+      "role": "student",
+      "name": "DARGA PRAWALIKA",
+      "walletAddress": "0x2C071caB31DB1A5E753FE3F50899D9887e30322a",
+      "privateKey": "0xa3335bf2b788642ec5f055fc48b453b125967f5496d41b0ee73ca9d8f2b0b1b9"
+    },
+    {
+      "username": "TEEGALA KAVERI REDDY",
+      "password": "22261A1257",
+      "role": "student",
+      "name": "TEEGALA KAVERI REDDY",
+      "walletAddress": "0x6a2a2481Fd5c0911cB30aFA67b07874cDdD52303",
+      "privateKey": "0xb2db5f6a194cd7b62e3b04c7ab7afb5580dc09c8669ef7762313294cec72dbc8"
+    },
+    {
+      "username": "ERENALA SRUJAN",
+      "password": "22261A1220",
+      "role": "student",
+      "name": "ERENALA SRUJAN",
+      "walletAddress": "0xED3cE25971380eBdA4E067D004e6DDe8A34b5b2c",
+      "privateKey": "0xfc3b587b127112f2b8d95304be461324afbb130bfd1b37d91c332e41347aec29"
+    },
+    {
+      "username": "BADAVATH UDAY",
+      "password": "22261A1206",
+      "role": "student",
+      "name": "BADAVATH UDAY",
+      "walletAddress": "0x49837FBeaE352dFD15479899257B00a89e1bC8C7",
+      "privateKey": "0x471f55b1a2843ff3a2a07c02a3f515da30f3d3e4d4c0a957b3c38a5ffe457901"
+    },
+    {
+      "username": "JAMUNA SHYAMALA",
+      "password": "22261A1225",
+      "role": "student",
+      "name": "JAMUNA SHYAMALA",
+      "walletAddress": "0x2061b51d7E304A7CEBc124E5FfCb7843EbF26aa7",
+      "privateKey": "0x9992660f4292f4bfc29bbfe4ca0ae055275cb76c7157a11712aa5bfdf8606cc1"
+    },
+    {
+      "username": "GOTURI HARSHITA",
+      "password": "22261A1221",
+      "role": "student",
+      "name": "GOTURI HARSHITA",
+      "walletAddress": "0x9F5B95DBa602d1E8CbA251b2e4070badb9100645",
+      "privateKey": "0x20f1b2751550957157f5c129def8a7622561d9102a846c39cb1da7c02148d01d"
+    },
+    {
+      "username": "BOGA SNEHITHA",
+      "password": "22261A1211",
+      "role": "student",
+      "name": "BOGA SNEHITHA",
+      "walletAddress": "0x62E1570310EBD3a496D74119Ad7b49e5D9981149",
+      "privateKey": "0x9197992677ca8468b5f77a4de0d946343b9b4ae4902e209573fc17f0bab9634d"
+    },
+    {
+      "username": "KANDULA PRADEEP REDDY",
+      "password": "22261A1230",
+      "role": "student",
+      "name": "KANDULA PRADEEP REDDY",
+      "walletAddress": "0xdF6c48D7D5AAB8B8085d3E91e55eCcbAaB354d31",
+      "privateKey": "0xed2ddddc3a6934e68cb8df14a28c9d52df1ef7da01f20b1f5f9406538331e489"
+    },
+    {
+      "username": "CHIRIKI CHANDANA",
+      "password": "22261A1215",
+      "role": "student",
+      "name": "CHIRIKI CHANDANA",
+      "walletAddress": "0xf4872c7af1b2d70c45D37fA70DcaEe75d1b8D890",
+      "privateKey": "0x25afb453c13d5e81eb6e09420f681b6eaaf384bbc71a982d7902495e5c418c25"
+    },
+    {
+      "username": "KANIVETA BHUVAN CHANDRA",
+      "password": "2226121231",
+      "role": "student",
+      "name": "KANIVETA BHUVAN CHANDRA",
+      "walletAddress": "0xBeDa307a66B7aD2C05A6E2BdcEc1dda2781b0b2f",
+      "privateKey": "0x3da02e24d21dbc4b812755a110f1fc794c4fa6205d105014144ebf796e21b6cc"
+    },
+    {
+      "username": "JUNUTHULA SIRI LASYA",
+      "password": "22261A1227",
+      "role": "student",
+      "name": "JUNUTHULA SIRI LASYA",
+      "walletAddress": "0x8C99cf8ed6a8fcD4b2cA6445BAE30C0Bb949cedf",
+      "privateKey": "0x5a0f7d16221807e88ee7f7fd976457c761976d616999abf8845cca6923355b88"
+    },
+    {
+      "username": "SAMBHAV T",
+      "password": "22261A1251",
+      "role": "student",
+      "name": "SAMBHAV T",
+      "walletAddress": "0xB5b8781828CC60DA293de14e0F8D6808bE7b29bd",
+      "privateKey": "0x14379e0122a8dfcc2672c3173820bee111d9239b16237e3efae1e387bde5e947"
+    },
+    {
+      "username": "SUVARNA AGASTHYA",
+      "password": "22261A1254",
+      "role": "student",
+      "name": "SUVARNA AGASTHYA",
+      "walletAddress": "0x906F9D157B61e4c8E76dd922fB4004c044e82996",
+      "privateKey": "0xe93325385de1b7de3a8056f697b55190a3dabafe02de3cba52aea8f00729404d"
+    },
+    {
+      "username": "TEEDA BHARAT VENKAT VINAY TEZ",
+      "password": "22261A1256",
+      "role": "student",
+      "name": "TEEDA BHARAT VENKAT VINAY TEZ",
+      "walletAddress": "0xd5207C554C0505a5B677da34a134f57E2b00724B",
+      "privateKey": "0x753d8377b86f0409765f170abb9b254ea85f84e5dc5cd0fdc9a32ea7c867ab88"
+    },
+    {
+      "username": "ABDUL MUQTADIR",
+      "password": "22261A1201",
+      "role": "student",
+      "name": "ABDUL MUQTADIR",
+      "walletAddress": "0xb058F22590AE83c9a3a070ecFd33df2b3cBfD6cf",
+      "privateKey": "0x1f49d5dab25f3f3cf07ab0104a81bc99ae482c60b6022001796e7ce63c799607"
+    },
+    {
+      "username": "SOWDAGAR ROSHAN NAVEED",
+      "password": "22261A1252",
+      "role": "student",
+      "name": "SOWDAGAR ROSHAN NAVEED",
+      "walletAddress": "0x8743AADd6F7BF0dab05346a07f504F999E91C7D0",
+      "privateKey": "0xc32a7538236eb60761bfb11c005c88e815ed85847881ae1c36dbec457186d643"
+    },
+    {
+      "username": "ABDUL RASHEED",
+      "password": "22261A1202",
+      "role": "student",
+      "name": "ABDUL RASHEED",
+      "walletAddress": "0x6f79Ce4E2095FcaCb6BC9789659dc0A7d35401F0",
+      "privateKey": "0x665322903d2bf1df6f73618411a05cda1f40033b14c71217394b3c0b6742dd26"
+    },
+    {
+      "username": "KANAKA SHARON",
+      "password": "22261A1229",
+      "role": "student",
+      "name": "KANAKA SHARON",
+      "walletAddress": "0x468303Ed84778A810D96d72e9fc7CdAC333aa9B5",
+      "privateKey": "0x70cede4a507ffe23604dc9e3d23a6b90f8a2f6eabf4d6ad3bf74d10a4ab1f52a"
+    },
+    {
+      "username": "DENDUKURI NAGA VAISHNAVI",
+      "password": "23265A1203",
+      "role": "student",
+      "name": "DENDUKURI NAGA VAISHNAVI",
+      "walletAddress": "0x50f60B40ec4CebfC443D8c549E94B93E375aad65",
+      "privateKey": "0x3fd80ac754289a1281f536c7903ad636450edbf9f8662eaa671777e65752d619"
+    },
+    {
+      "username": "ESHABOINA ARAVIND",
+      "password": "23265A1204",
+      "role": "student",
+      "name": "ESHABOINA ARAVIND",
+      "walletAddress": "0xD6ede23c6587e95f489425688a46e2F3AC1A12Ab",
+      "privateKey": "0x9d37af7114e39b8502c24e9e7889e976fdb7152f765a04f2fc7cd99ed6c101e4"
+    },
+    {
+      "username": "BHAVANARUSHI RAJDEEP",
+      "password": "22261A1210",
+      "role": "student",
+      "name": "BHAVANARUSHI RAJDEEP",
+      "walletAddress": "0x6A65E492AC0d8095e1743dcBcC7c77a7E12F7323",
+      "privateKey": "0xfc63e13b9f3329d017ab9534e72b72e7b50df259e171da913b9599c4291bd42f"
+    },
+    {
+      "username": "PARUPATI SUDARSHAN REDDY",
+      "password": "22261A1244",
+      "role": "student",
+      "name": "PARUPATI SUDARSHAN REDDY",
+      "walletAddress": "0xeD23Cd2C22b8c3bA2d5565AA94dE8203270D05C2",
+      "privateKey": "0xf61f05c5288226410d4b6ca4e76e6dfe88203d013457bb92fe619115d35b8320"
+    },
+    {
+      "username": "BANDAM VENKATA MOHAN KARTHIK",
+      "password": "22261A1207",
+      "role": "student",
+      "name": "BANDAM VENKATA MOHAN KARTHIK",
+      "walletAddress": "0x15d8daBDE7b5cC5A689d6c9B728dda8DDb5999ee",
+      "privateKey": "0xcb63032f51d5c439d414a83693c59d97a0a3f2f2d7739363f5901baffa0952cc"
+    },
+    {
+      "username": "PALLIKONDA SINDHUJA",
+      "password": "22261A1243",
+      "role": "student",
+      "name": "PALLIKONDA SINDHUJA",
+      "walletAddress": "0x4A56966fc225D36C3D5852DD35DB519eEaA2D728",
+      "privateKey": "0x5880bcd14ae99e4ce1c57ddd00714a71ab9130e9761caa118b30af6b53879d34"
+    },
+    {
+      "username": "PENDYALA JAYA CHARAN",
+      "password": "22261A1247",
+      "role": "student",
+      "name": "PENDYALA JAYA CHARAN",
+      "walletAddress": "0x6CE81dEcaACe12653F0754397AA09D987fBFd3A3",
+      "privateKey": "0xa87a01bae6050479a01f48b8c5c96bf9f6270401387900006e01968c441e683a"
+    },
+    {
+      "username": "CHENEMONI VAISHNAVI",
+      "password": "22261A1214",
+      "role": "student",
+      "name": "CHENEMONI VAISHNAVI",
+      "walletAddress": "0xA43040C5f6ce821B702D3463c0D93A20D3cEAd0E",
+      "privateKey": "0xf9c44605811e031da710d100b8dca2b96d18b9402b0d8ac8512891d3cf552193"
+    },
+    {
+      "username": "CHALLURI BHANUPRAKASH",
+      "password": "23265A1202",
+      "role": "student",
+      "name": "CHALLURI BHANUPRAKASH",
+      "walletAddress": "0x90A34C19a4D45e96C9950AaBFFBF86E0cfD6d0D6",
+      "privateKey": "0xdc45f25c184c83236d2740c0c0654529eea3ce93cad0feeaf719ff9e16969b13"
+    },
+    {
+      "username": "ANTHAMGARI TEJASRI",
+      "password": "22261A1204",
+      "role": "student",
+      "name": "ANTHAMGARI TEJASRI",
+      "walletAddress": "0xc96FbA61920e494B327ab5Cb0c812eE47e3233F6",
+      "privateKey": "0x45c67d6f661e1d7889a4ef02db637c49097d4d82652b4804bad51fed6578e903"
+    },
+    {
+      "username": "K TANVISH REDDY",
+      "password": "22261A1228",
+      "role": "student",
+      "name": "K TANVISH REDDY",
+      "walletAddress": "0xfe2685fe70e5611799e512FEb89D867666b6aA67",
+      "privateKey": "0x2d29cb29c27f1667d00e8930cc2f558870e3767abe29d87974afa5ab9645a0e9"
+    },
+    {
+      "username": "VISHWANATH SAI RUTHIK",
+      "password": "22261A1263",
+      "role": "student",
+      "name": "VISHWANATH SAI RUTHIK",
+      "walletAddress": "0xc7E3a766C84c45Bb6C24959B79fC5a3eD25b630B",
+      "privateKey": "0x5fb8c777f318d9a436ecf219a46d9dbd05f2d190b1d3fa3cdce2ead6a510f845"
+    },
+    {
+      "username": "KATEPALLY SRIKANTH",
+      "password": "22261A1234",
+      "role": "student",
+      "name": "KATEPALLY SRIKANTH",
+      "walletAddress": "0x36591d55bCF08Ad0ed4A3e84f647b58B61064F09",
+      "privateKey": "0xbaf32f940f7a28f52a9a76ae942705aabea99fe528e7363bd8ab7cf9353a6d81"
+    },
+    {
+      "username": "VADLA BINDU SRI",
+      "password": "22261A1261",
+      "role": "student",
+      "name": "VADLA BINDU SRI",
+      "walletAddress": "0x24e535E5612F25aFB7b661289ebFF152d3540324",
+      "privateKey": "0xa064ae61908d9250437afa69ee0810918abac32053796f12877a7ce4ad643b57"
+    },
+    {
+      "username": "GURMITKAL SHARATH KUMAR REDDY",
+      "password": "22261A1223",
+      "role": "student",
+      "name": "GURMITKAL SHARATH KUMAR REDDY",
+      "walletAddress": "0x3289846fCC390e775CdC82Fca7A543F2033849Cc",
+      "privateKey": "0xb3b0184c75d8eaa8ff14948acc6438da4781516134232a362a5a13a9e24b6590"
+    },
+    {
+      "username": "N RANI",
+      "password": "22261A1239",
+      "role": "student",
+      "name": "N RANI",
+      "walletAddress": "0x331772B579Ca134bDb5baDB730b88329211B496D",
+      "privateKey": "0xb7573014cc4d362b46745b6646138a5277ebdd08128a748e6df8e8f3ffb45c79"
+    },
+    {
+      "username": "NAGIREDDY AMITH REDDY",
+      "password": "22261A1240",
+      "role": "student",
+      "name": "NAGIREDDY AMITH REDDY",
+      "walletAddress": "0xf301Cfc606f75271bAdac49600ddE9131fAeC8DF",
+      "privateKey": "0x22d2c2cc2a6c0bf3d21b1112820b276e29fafd09d7870bfa215fa6fee8f9d8f0"
+    },
+    {
+      "username": "NALLA SANTHOSH REDDY",
+      "password": "22261A1242",
+      "role": "student",
+      "name": "NALLA SANTHOSH REDDY",
+      "walletAddress": "0xf6e14EDFD752C63140F36BADC77caB7BA89a5949",
+      "privateKey": "0x9d4963f1fb7b8936c3a0263d640981e026562e2d30d9612a4627888cd63a1891"
+    },
+    {
+      "username": "M MAHESH",
+      "password": "21261A1244",
+      "role": "student",
+      "name": "M MAHESH",
+      "walletAddress": "0x8809710C4729B191aBb17fDB73A2DEfb8601D701",
+      "privateKey": "0xdfcd55549a4a863545f544e8604d38f186f827d182b782542bc514460eb1eece"
+    },
+    {
+      "username": "GURRAM YESHWANTH REDDY",
+      "password": "22261A1224",
+      "role": "student",
+      "name": "GURRAM YESHWANTH REDDY",
+      "walletAddress": "0x61D782360fB98287854FA64E47098C168Ca2318D",
+      "privateKey": "0xbacacc0a9a63a92684b353431c4605708bd53e4f6f9483880888783b5e579154"
+    },
+    {
+      "username": "ALISHETTY HARSHA VARDHAN SAI",
+      "password": "22261A1203",
+      "role": "student",
+      "name": "ALISHETTY HARSHA VARDHAN SAI",
+      "walletAddress": "0xFcf17884b3Cb63FF299443027e7591D0b36F9451",
+      "privateKey": "0xdc76e3208e742b43e2dbd8575baf67bf4b3a7e888237037db53c303ddfc8d7b3"
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": 1764794685395,
+      "name": "coding",
+      "date": "2025-12-05",
+      "assignedFaculty": "Dr. D. VIJAYA LAKSHMI",
+      "participants": [
+        {
+          "studentName": "KARTHIKEYA REDDY VELAGALA",
+          "studentUsername": "KARTHIKEYA REDDY VELAGALA",
+          "studentWallet": "0x1198418aF9832611d53AC5360bfE067500694d01",
+          "amount": "10",
+          "position": "Participant",
+          "status": "Verified",
+          "txHash": "0x46e76b0069b520491d52ac3488feb941a2c84524b61dd98b51485fedf41f9b5d"
+        },
+        {
+          "studentName": "VEDANT MALPANI",
+          "studentUsername": "VEDANT MALPANI",
+          "studentWallet": "0x71946162E354f1CCa91Af3B5f9d9964D02653d8b",
+          "amount": "100",
+          "position": "Winner",
+          "status": "Verified",
+          "txHash": "0xba039f7d485880fa66bcbde3735ed1ce3866e68a278de6dfbb008abf0ec300e7"
+        },
+        {
+          "studentName": "PATLANNAGARI PRITEESH REDDY",
+          "studentUsername": "PATLANNAGARI PRITEESH REDDY",
+          "studentWallet": "0xA4b065b7b5E9470ec9786f25015Edfb6A1F07B8A",
+          "amount": "10",
+          "position": "Participant",
+          "status": "Verified",
+          "txHash": "0xffb0f3e3d06cb3d113ad89f5a399e13c0c47e2b606e58c547beac40b063afa36"
+        }
+      ]
+    },
+    {
+      "id": 1764794698427,
+      "name": "hackathon",
+      "date": "2025-12-05",
+      "assignedFaculty": "Dr. M. RUDRA KUMAR",
+      "participants": [
+        {
+          "studentName": "KARTHIKEYA REDDY VELAGALA",
+          "studentUsername": "KARTHIKEYA REDDY VELAGALA",
+          "studentWallet": "0x1198418aF9832611d53AC5360bfE067500694d01",
+          "amount": "10",
+          "position": "Participant",
+          "status": "Pending"
+        },
+        {
+          "studentName": "VEDANT MALPANI",
+          "studentUsername": "VEDANT MALPANI",
+          "studentWallet": "0x71946162E354f1CCa91Af3B5f9d9964D02653d8b",
+          "amount": "100",
+          "position": "Winner",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": 1764795766610,
+      "name": "python seminar",
+      "date": "",
+      "participants": []
+    },
+    {
+      "id": 1764795788273,
+      "name": "python seminar",
+      "date": "2025-12-05",
+      "participants": []
+    }
+  ]
 }
