@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { ethers } from "ethers";
 import { QRCodeCanvas } from "qrcode.react";
 
-const API = "http://localhost:4000";
-// !!! UPDATE THIS ADDRESS !!!
-const COIN_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-const ERC20_ABI = [
-  "function balanceOf(address) view returns (uint256)",
-  "function transfer(address to, uint amount) returns (bool)",
-];
+const API = "http://localhost:4000"; // Pointing to your Memory Backend
 
 function Dashboard({ user, onLogout }) {
   const [view, setView] = useState("home");
-  const [balance, setBalance] = useState("0");
+  const [balance, setBalance] = useState(user.balance || 0); // Initialize with logged-in user's balance
   const [ledger, setLedger] = useState([]);
   const [events, setEvents] = useState([]);
   const [facultyList, setFacultyList] = useState([]);
-
-  // Admin Tabs
-  const [adminTab, setAdminTab] = useState("create");
 
   // Inputs
   const [payTo, setPayTo] = useState("");
@@ -27,39 +17,34 @@ function Dashboard({ user, onLogout }) {
   // Event Creation
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
-  const [selectedFaculty, setSelectedFaculty] = useState(""); // New Field
+  const [selectedFaculty, setSelectedFaculty] = useState("");
 
   // Add Participant
   const [targetEventId, setTargetEventId] = useState("");
   const [winnerUser, setWinnerUser] = useState("");
-  const [winnerAmount, setWinnerAmount] = useState("10"); // Default 10
+  const [winnerAmount, setWinnerAmount] = useState("10");
   const [winnerPos, setWinnerPos] = useState("Participant");
 
-  // Add User
-  const [newUserName, setNewUserName] = useState("");
-  const [newUserUser, setNewUserUser] = useState("");
-  const [newUserPass, setNewUserPass] = useState("");
-  const [newUserRole, setNewUserRole] = useState("student");
-  const [newUserWallet, setNewUserWallet] = useState("");
-
   useEffect(() => {
+    // Fetch fresh data every time the dashboard loads
     fetchBalance();
     fetchLedger();
     fetchEvents();
     if (user.role === "admin") fetchFacultyList();
-  }, [user.role]);
+  }, [user.role, view]); // Reload when view changes (e.g. clicking Dashboard)
 
+  // --- 1. NEW FETCH BALANCE FUNCTION (Connects to Backend, NOT Blockchain) ---
   async function fetchBalance() {
-    if (!window.ethereum) return;
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        "http://127.0.0.1:8545"
-      );
-      const contract = new ethers.Contract(COIN_ADDRESS, ERC20_ABI, provider);
-      const bal = await contract.balanceOf(user.walletAddress);
-      setBalance(ethers.utils.formatUnits(bal, 18));
+      // We ask the backend: "How much money does this wallet have?"
+      const res = await fetch(`${API}/api/user/${user.walletAddress}`);
+      const data = await res.json();
+
+      if (data && data.balance !== undefined) {
+        setBalance(data.balance);
+      }
     } catch (e) {
-      console.error(e);
+      console.error("Could not fetch balance:", e);
     }
   }
 
@@ -68,20 +53,27 @@ function Dashboard({ user, onLogout }) {
       const res = await fetch(`${API}/ledger`);
       const data = await res.json();
       if (Array.isArray(data)) setLedger(data);
-      else setLedger([]);
     } catch (e) {
       setLedger([]);
     }
   }
 
   async function fetchEvents() {
-    const res = await fetch(`${API}/events`);
-    setEvents(await res.json());
+    try {
+      const res = await fetch(`${API}/events`);
+      setEvents(await res.json());
+    } catch (e) {
+      setEvents([]);
+    }
   }
 
   async function fetchFacultyList() {
-    const res = await fetch(`${API}/list/faculty`);
-    setFacultyList(await res.json());
+    try {
+      const res = await fetch(`${API}/list/faculty`);
+      setFacultyList(await res.json());
+    } catch (e) {
+      setFacultyList([]);
+    }
   }
 
   // --- ACTIONS ---
@@ -127,47 +119,39 @@ function Dashboard({ user, onLogout }) {
     });
     const data = await res.json();
     if (data.success) {
-      alert("Verified! Coins Sent.\nTx: " + data.txHash);
+      alert("Verified! Coins Sent.");
       fetchEvents();
       fetchLedger();
     } else alert(data.error);
   }
 
+  // --- 2. UPDATED TRANSFER FUNCTION (Uses Backend API) ---
   async function handleTransfer() {
-    if (!window.ethereum) return alert("Install MetaMask");
-    await window.ethereum.request({ method: "eth_requestAccounts" });
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract(COIN_ADDRESS, ERC20_ABI, signer);
     try {
-      const tx = await contract.transfer(
-        payTo,
-        ethers.utils.parseUnits(payAmount, 18)
-      );
-      await tx.wait();
-      alert("Success!");
-      fetchBalance();
-      fetchLedger();
-    } catch (e) {
-      alert("Failed: " + e.message);
-    }
-  }
+      const res = await fetch(`${API}/api/transaction`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          toAddress: payTo,
+          amount: payAmount,
+          reason: "Student Transfer",
+        }),
+      });
 
-  async function handleCreateUser() {
-    const res = await fetch(`${API}/admin/add-user`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: newUserUser,
-        password: newUserPass,
-        role: newUserRole,
-        name: newUserName,
-        walletAddress: newUserWallet,
-      }),
-    });
-    const data = await res.json();
-    if (data.success) alert("User Created!");
-    else alert(data.error);
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Success! Sent " + payAmount + " CAMP");
+        setPayTo("");
+        setPayAmount("");
+        fetchBalance(); // Update balance immediately
+        fetchLedger();
+      } else {
+        alert("Failed: " + data.message);
+      }
+    } catch (e) {
+      alert("Transfer Error: " + e.message);
+    }
   }
 
   return (
@@ -335,7 +319,7 @@ function Dashboard({ user, onLogout }) {
                   </thead>
                   <tbody>
                     {events
-                      .filter((ev) => ev.assignedFaculty === user.username) // ONLY SHOW ASSIGNED
+                      .filter((ev) => ev.assignedFaculty === user.name)
                       .flatMap((ev) =>
                         ev.participants.map((p) => ({
                           ...p,
