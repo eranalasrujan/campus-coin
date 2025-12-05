@@ -6,7 +6,8 @@ function Login({ onLogin }) {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:4000/login", {
+      // 🟢 FIX: Use 127.0.0.1 instead of localhost
+      const res = await fetch("http://127.0.0.1:4000/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -15,7 +16,9 @@ function Login({ onLogin }) {
       if (data.success) onLogin(data.user);
       else alert(data.error);
     } catch (e) {
-      alert("Backend is offline");
+      alert(
+        "Backend is offline. Please run 'node index.js' in the backend folder."
+      );
     }
   };
 
@@ -50,9 +53,7 @@ function Login({ onLogin }) {
           marginTop: "20px",
         }}
       >
-        Demo Users:
-        <br />
-        admin/123 • faculty/123 • student/123 • canteen/123
+        Demo Users: <br /> admin/123 • faculty/123 • student/123
       </div>
     </div>
   );

@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\91912\\Desktop\\campus-coin\\contracts\\CampusCoin.sol": {
-      "lastModificationDate": 1764747607523,
-      "contentHash": "b03fbfc6f8c12812a50f5ed1965161ae",
+      "lastModificationDate": 1764813836079,
+      "contentHash": "0d5f881db4f6c1d59fe81624c650f2c7",
       "sourceName": "contracts/CampusCoin.sol",
       "solcConfig": {
         "version": "0.8.19",

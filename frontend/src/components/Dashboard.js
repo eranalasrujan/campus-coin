@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { ethers } from "ethers"; // 🟢 Added for Blockchain
 import { QRCodeCanvas } from "qrcode.react";
 
-const API = "http://localhost:4000"; // Pointing to your Memory Backend
+const API = "http://127.0.0.1:4000";
+
+// 🔴 CRITICAL: REPLACE THIS WITH YOUR CONTRACT ADDRESS FROM TERMINAL
+const COIN_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+
+const ERC20_ABI = [
+  "function balanceOf(address) view returns (uint256)",
+  "function transfer(address to, uint amount) returns (bool)",
+  "function decimals() view returns (uint8)",
+];
 
 function Dashboard({ user, onLogout }) {
   const [view, setView] = useState("home");
-  const [balance, setBalance] = useState(user.balance || 0); // Initialize with logged-in user's balance
+  const [balance, setBalance] = useState("0");
   const [ledger, setLedger] = useState([]);
   const [events, setEvents] = useState([]);
   const [facultyList, setFacultyList] = useState([]);
@@ -14,39 +24,75 @@ function Dashboard({ user, onLogout }) {
   const [payTo, setPayTo] = useState("");
   const [payAmount, setPayAmount] = useState("");
 
-  // Event Creation
+  // Event Creation Inputs
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [selectedFaculty, setSelectedFaculty] = useState("");
 
-  // Add Participant
+  // Add Participant Inputs
   const [targetEventId, setTargetEventId] = useState("");
   const [winnerUser, setWinnerUser] = useState("");
   const [winnerAmount, setWinnerAmount] = useState("10");
   const [winnerPos, setWinnerPos] = useState("Participant");
 
   useEffect(() => {
-    // Fetch fresh data every time the dashboard loads
-    fetchBalance();
-    fetchLedger();
+    fetchBalance(); // 🟢 Checks Blockchain for Money
+    fetchLedger(); // Checks Backend for History
     fetchEvents();
     if (user.role === "admin") fetchFacultyList();
-  }, [user.role, view]); // Reload when view changes (e.g. clicking Dashboard)
+  }, [user.walletAddress, view]);
 
-  // --- 1. NEW FETCH BALANCE FUNCTION (Connects to Backend, NOT Blockchain) ---
+  // ============================================================
+  // 🟢 1. BLOCKCHAIN LOGIC (THE NEW PART)
+  // ============================================================
+
   async function fetchBalance() {
     try {
-      // We ask the backend: "How much money does this wallet have?"
-      const res = await fetch(`${API}/api/user/${user.walletAddress}`);
-      const data = await res.json();
+      // Tries to connect to Ganache (Localhost 8545)
+      const provider = new ethers.providers.JsonRpcProvider(
+        "http://127.0.0.1:8545"
+      );
+      const contract = new ethers.Contract(COIN_ADDRESS, ERC20_ABI, provider);
 
-      if (data && data.balance !== undefined) {
-        setBalance(data.balance);
-      }
+      // Reads the ACTUAL balance from the Smart Contract
+      const bal = await contract.balanceOf(user.walletAddress);
+      setBalance(ethers.utils.formatUnits(bal, 18));
     } catch (e) {
-      console.error("Could not fetch balance:", e);
+      console.error("Blockchain Error:", e);
+      // If blockchain fails, show 0 or keep old balance
     }
   }
+
+  async function handleTransfer() {
+    if (!window.ethereum) return alert("Please install MetaMask!");
+
+    try {
+      // Connect to MetaMask
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+
+      const contract = new ethers.Contract(COIN_ADDRESS, ERC20_ABI, signer);
+
+      // Send the transaction to the Blockchain
+      const tx = await contract.transfer(
+        payTo,
+        ethers.utils.parseUnits(payAmount, 18)
+      );
+      alert("Transaction Sent! Waiting for confirmation...");
+
+      await tx.wait(); // Wait for it to be mined
+      alert("Transaction Confirmed on Blockchain!");
+
+      fetchBalance(); // Update balance instantly
+    } catch (e) {
+      alert("Transfer Failed: " + e.message);
+    }
+  }
+
+  // ============================================================
+  // 🔵 2. BACKEND LOGIC (KEEPING YOUR UI DATA)
+  // ============================================================
 
   async function fetchLedger() {
     try {
@@ -76,7 +122,7 @@ function Dashboard({ user, onLogout }) {
     }
   }
 
-  // --- ACTIONS ---
+  // --- ACTIONS (Backend DB Updates) ---
 
   async function handleCreateEvent() {
     await fetch(`${API}/admin/create-event`, {
@@ -123,35 +169,6 @@ function Dashboard({ user, onLogout }) {
       fetchEvents();
       fetchLedger();
     } else alert(data.error);
-  }
-
-  // --- 2. UPDATED TRANSFER FUNCTION (Uses Backend API) ---
-  async function handleTransfer() {
-    try {
-      const res = await fetch(`${API}/api/transaction`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          toAddress: payTo,
-          amount: payAmount,
-          reason: "Student Transfer",
-        }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        alert("Success! Sent " + payAmount + " CAMP");
-        setPayTo("");
-        setPayAmount("");
-        fetchBalance(); // Update balance immediately
-        fetchLedger();
-      } else {
-        alert("Failed: " + data.message);
-      }
-    } catch (e) {
-      alert("Transfer Error: " + e.message);
-    }
   }
 
   return (
@@ -204,7 +221,6 @@ function Dashboard({ user, onLogout }) {
             {/* ADMIN VIEW */}
             {user.role === "admin" && (
               <div className="grid-container">
-                {/* LEFT: CREATE EVENT */}
                 <div className="card">
                   <h3>1. Create Event</h3>
                   <label>Event Name</label>
@@ -235,7 +251,6 @@ function Dashboard({ user, onLogout }) {
                   </button>
                 </div>
 
-                {/* RIGHT: ADD STUDENT */}
                 <div className="card">
                   <h3>2. Add Participant</h3>
                   <label>Select Event</label>
@@ -275,7 +290,6 @@ function Dashboard({ user, onLogout }) {
                   </button>
                 </div>
 
-                {/* BOTTOM: EVENT LIST */}
                 <div className="card full-width">
                   <h3>All Created Events</h3>
                   <table>
@@ -340,7 +354,6 @@ function Dashboard({ user, onLogout }) {
                             ) : (
                               <button
                                 className="btn"
-                                style={{ padding: "5px" }}
                                 onClick={() =>
                                   handleVerify(p.eventId, p.studentWallet)
                                 }
@@ -360,7 +373,7 @@ function Dashboard({ user, onLogout }) {
             {user.role === "student" && (
               <div className="grid-container">
                 <div className="card">
-                  <h3>Send Payment</h3>
+                  <h3>Send Payment (Blockchain)</h3>
                   <input
                     className="input"
                     placeholder="Address"
@@ -374,7 +387,7 @@ function Dashboard({ user, onLogout }) {
                     onChange={(e) => setPayAmount(e.target.value)}
                   />
                   <button className="btn" onClick={handleTransfer}>
-                    Pay
+                    Pay via MetaMask
                   </button>
                 </div>
                 <div className="card full-width">
@@ -409,7 +422,6 @@ function Dashboard({ user, onLogout }) {
               </div>
             )}
 
-            {/* VENDOR VIEW */}
             {user.role === "vendor" && (
               <div className="card" style={{ textAlign: "center" }}>
                 <h3>Scan to Pay</h3>
